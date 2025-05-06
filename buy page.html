@@ -1,0 +1,164 @@
+buy                                                                                                                                                                                      <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Buy - Mobile Shopping</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your common CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            margin-bottom: 20px;
+            display: none; /* Initially hide all product details */
+        }
+
+        .product-image {
+            width: 100%;
+            max-height: 250px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #333;
+        }
+
+        .price {
+            font-size: 24px;
+            color: #d32f2f;
+            margin-top: 10px;
+        }
+
+        .description {
+            margin-top: 20px;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #0078d7;
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #005a99;
+        }
+
+        .product-list {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .product-preview {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .product-preview img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Product Selection -->
+    <div class="product-list">
+        <div class="product-preview" onclick="showProduct('iphone16')">
+            <img src="https://www.pngmart.com/files/15/Apple-iPhone-11-PNG-Background-Image.png" alt="IPHONE 16PRO">
+            <p>IPHONE 16PRO</p>
+        </div>
+        <div class="product-preview" onclick="showProduct('smartphone2')">
+            <img src="https://www.pngmart.com/files/15/Apple-iPhone-11-PNG-Clipart.png" alt="Smartphone Model 2">
+            <p>Smartphone Model 2</p>
+        </div>
+        <div class="product-preview" onclick="showProduct('samsungA16')">
+            <img src="https://images.samsung.com/is/image/samsung/p6pim/in/sm-a166pzdhins/gallery/in-galaxy-a16-5g-sm-a166-sm-a166pzdhins-thumb-544007856" alt="Samsung Galaxy A16">
+            <p>Samsung Galaxy A16</p>
+        </div>
+    </div>
+
+    <!-- Product 1: iPhone 16PRO -->
+    <div id="iphone16" class="container">
+        <img src="https://www.pngmart.com/files/15/Apple-iPhone-11-PNG-Background-Image.png" alt="IPHONE 16PRO" class="product-image">
+        <h2>IPHONE 16PRO</h2>
+        <p class="price">$599.99</p>
+        <p class="description">
+            The Smartphone XYZ features the latest technology, a sleek design, and a powerful camera. Perfect for everyday use and capturing stunning photos.
+        </p>
+        <a href="phonepay.com" class="btn">Add to Cart</a>
+        <a href="checkout.html" class="btn">Proceed to Checkout</a>
+    </div>
+
+    <!-- Product 2: Smartphone Model 2 -->
+    <div id="smartphone2" class="container">
+        <img src="https://www.pngmart.com/files/15/Apple-iPhone-11-PNG-Clipart.png" alt="Smartphone Model 2" class="product-image">
+        <h2>Smartphone Model 2</h2>
+        <p class="price">$699.99</p>
+        <p class="description">
+            Experience the power and elegance of Smartphone Model 2, equipped with the latest features and technology to enhance your mobile experience.
+        </p>
+        <a href="phonepay.com" class="btn">Add to Cart</a>
+        <a href="checkout.html" class="btn">Proceed to Checkout</a>
+    </div>
+
+    <!-- Product 3: Samsung Galaxy A16 -->
+    <div id="samsungA16" class="container">
+        <img src="https://images.samsung.com/is/image/samsung/p6pim/in/sm-a166pzdhins/gallery/in-galaxy-a16-5g-sm-a166-sm-a166pzdhins-thumb-544007856" alt="Samsung Galaxy A16" class="product-image">
+        <h2>Samsung Galaxy A16</h2>
+        <p class="price">$499.99</p>
+        <p class="description">
+            The Samsung Galaxy A16 offers excellent performance, a large screen, and great value for its price. Perfect for users seeking a reliable and affordable smartphone.
+        </p>
+        <a href="phonepay.com" class="btn">Add to Cart</a>
+        <a href="checkout.html" class="btn">Proceed to Checkout</a>
+    </div>
+
+    <script>
+        // Function to show the clicked product and hide others
+        function showProduct(productId) {
+            // Hide all product containers
+            const allProducts = document.querySelectorAll('.container');
+            allProducts.forEach(product => product.style.display = 'none');
+            
+            // Show the selected product
+            const selectedProduct = document.getElementById(productId);
+            if (selectedProduct) {
+                selectedProduct.style.display = 'block';  // Display the selected product
+            }
+        }
+    </script>
+
+</body>
+</html>
